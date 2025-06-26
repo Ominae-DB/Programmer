@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Ominea | Richiedi un Preventivo o una Consulenza</title>
+    <meta name="description" content="Mettiamoci in contatto per discutere il tuo progetto. Compila il modulo per richiedere un preventivo gratuito o per una consulenza strategica sul tuo futuro digitale.">
+    <meta name="keywords" content="contatti, preventivo sito web, consulenza web, Ominea, Domenico Bottalico, informazioni, email">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo_ominea_placeholder.png" alt="Logo Ominea" id="logo">
+            </a>
+            <nav>
+                <button class="menu-toggle" aria-label="Apri menu" aria-expanded="false">
+                    <span class="hamburger-icon"></span>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chi-sono.html">Chi Sono</a></li>
+                    <li><a href="servizi.html">Servizi</a></li>
+                    <li><a href="galleria.html">Galleria</a></li>
+                    <li><a href="contatti.html" class="active">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" id="hero-contatti">
+            <div id="tsparticles"></div>
+            <div class="container text-center">
+                <h1 class="animate-on-scroll">Mettiamoci in <span class="highlight">Contatto</span></h1>
+                <p class="subtitle animate-on-scroll delay-1">Hai un'idea da realizzare, una domanda o vuoi semplicemente iniziare una conversazione? <br><br>Compila il modulo o utilizza i recapiti qui sotto: sono a tua disposizione.</p>
+            </div>
+        </section>
+
+        <section id="contact-form-section">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-form-wrapper animate-on-scroll delay-2">
+                        <h2>Scrivimi Direttamente</h2>
+                        <p>Compila il modulo sottostante per inviarmi un messaggio. Risponderò il prima possibile.</p>
+                        <form id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label for="name">Nome e Cognome*</label>
+                                <input type="text" id="name" name="name" required aria-required="true">
+                                <small class="error-message" aria-live="polite"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                                <small class="error-message" aria-live="polite"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Oggetto del Messaggio</label>
+                                <input type="text" id="subject" name="subject">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Tipo di Servizio di Interesse (opzionale)</label>
+                                <select id="service" name="service">
+                                    <option value="">Seleziona un'opzione...</option>
+                                    <option value="sito-vetrina">Sito Web Vetrina</option>
+                                    <option value="sito-professionale">Sito Web Professionale</option>
+                                    <option value="sito-aziendale">Sito Web Aziendale</option>
+                                    <option value="sito-ecommerce">Sito E-commerce</option>
+                                    <option value="servizio-essenziale">Servizio Essenziale</option>
+                                    <option value="servizio-intermedio">Servizio Intermedio</option>
+                                    <option value="servizio-avanzato">Servizio Avanzato</option>
+                                    <option value="servizio-elite">Servizio Elite</option>
+                                    <option value="branding">Branding</option>
+                                    <option value="manutenzione">Manutenzione</option>
+                                    <option value="consulenza">Consulenza / Altro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Il Tuo Messaggio*</label>
+                                <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                                <small class="error-message" aria-live="polite"></small>
+                            </div>
+                            <div class="form-group" style="display: flex; align-items: center;">
+                                <input type="checkbox" id="privacy" name="privacy" required aria-required="true" style="width: auto;">
+                                <label for="privacy" class="checkbox-label">Dichiaro di aver letto e accettato la <a href="privacy-policy.html" target="_blank">Privacy Policy</a>*</label>
+                                <small class="error-message" aria-live="polite" style="display: block; width: 100%;"></small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Invia Messaggio</button>
+                            <div id="form-status-messages" aria-live="assertive"></div>
+                        </form>
+                    </div>
+                    <aside class="contact-info-wrapper animate-on-scroll delay-3">
+                        <h2>Altri Modi per <span class="highlight">Contattarmi</span></h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <img src="assets/icons/email_icon_contact.png" alt="Icona Email" class="contact-icon">
+                                <div>
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:info@ominea.it">info.ominea@gmail.com</a></p>
+                                </div>
+                            </div>
+                             <div class="contact-item">
+                                <img src="assets/icons/phone_icon_contact.png" alt="Icona Telefono" class="contact-icon">
+                                <div>
+                                    <h3>Telefono (Opzionale)</h3>
+                                    <p><a href="tel:+391234567890">+39 389 5052 XXX</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <img src="assets/icons/location_icon_contact.png" alt="Icona Posizione" class="contact-icon">
+                                <div>
+                                    <h3>Disponibilità</h3>
+                                    <p>Opero principalmente da remoto, disponibile per collaborazioni in tutta Italia e incontri in Puglia.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="mt-4" style="margin-top: 2rem;">Seguimi sui <span class="highlight">Social</span></h2>
+                        <div class="social-icons-contact">
+                             <a href="https://www.youtube.com/@OminaeOfficial" target="_blank" aria-label="Youtube" class="social-link"><img src="assets/icons/youtube_icon.png" alt="Youtube"> Youtube</a>
+                             <a href="https://www.tiktok.com/@ominaeofficial" target="_blank" aria-label="Tiktok" class="social-link"><img src="assets/icons/tiktok_icon.png" alt="Tiktok"> Tiktok</a>
+                             <a href="https://www.instagram.com/ominaeofficial/" target="_blank" aria-label="Instagram" class="social-link"><img src="assets/icons/instagram_icon.png" alt="Instagram"> Instagram</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+
+    <div class="footer-col footer-logo-col">
+        <a href="index.html" class="footer-logo">
+            <img src="assets/img/logo_ominea_placeholder.png" alt="Logo Ominea">
+        </a>
+        <p>di Domenico Bottalico</p>
+        <p>Web Developer & Innovator</p>
+    </div>
+
+    <div class="footer-col">
+        <h4>Link Utili</h4>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chi-sono.html">Chi Sono</a></li>
+            <li><a href="servizi.html">Servizi</a></li>
+            <li><a href="galleria.html">Galleria</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-col">
+        <h4>Informative</h4>
+        <ul>
+            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+    </div>
+
+    <<div class="footer-col">
+    <h4>Seguimi</h4>
+    <div class="social-icons">
+        <a href="https://www.tiktok.com/@ominaeofficial" target="_blank" aria-label="Youtube" class="social-link"><img src="assets/icons/youtube_icon.png" alt="Youtube"> Youtube</a>
+        <a href="https://www.tiktok.com/@ominaeofficial" target="_blank" aria-label="Tiktok" class="social-link"><img src="assets/icons/tiktok_icon.png" alt="Tiktok"> Tiktok</a>
+        <a href="https://www.instagram.com/ominaeofficial/" target="_blank" aria-label="Instagram" class="social-link"><img src="assets/icons/instagram_icon.png" alt="Instagram"> Instagram</a>
+    </div>
+</div>
+
+</div>
+            <div class="copyright">
+                <p>© <span id="currentYear"></span> Ominea - Domenico Bottalico. Tutti i diritti riservati.</p>
+                
+            </div>
+        </div>
+    </footer>
+ 
+    <div id="cookieConsentBanner"></div>
+    
+    <button id="scrollToTopBtn" title="Torna su">
+        <img src="assets/icons/arrow_up_icon.png" alt="Torna su">
+    </button>
+    
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+    <script src="js/particle-config.js"></script> 
+    <script src="js/global.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/cookies.js"></script> 
+</body>
+</html>
+
+
