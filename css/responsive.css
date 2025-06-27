@@ -1,0 +1,212 @@
+/* File: css/responsive.css */
+
+/* ===================================================================
+   INDICE MEDIA QUERIES
+   ===================================================================
+   1. Fino a 1024px (Tablet orizzontali)
+   2. Fino a 768px (Tablet verticali e Mobile grandi)
+   3. Fino a 480px (Mobile piccoli)
+   =================================================================== */
+
+
+/* ===================================================================
+   1. Fino a 1024px (Tablet orizzontali)
+   =================================================================== */
+@media (max-width: 1024px) {
+
+    /* ---- Tipografia e Spaziature Generali ---- */
+    :root {
+        --section-padding-y: 100px;
+    }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.25rem; }
+    .hero-section h1 { font-size: 3.5rem; }
+
+    /* ---- Layout e Griglie ---- */
+    #chi-sono-preview .chi-sono-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    #chi-sono-preview .profile-pic {
+        margin: 0 auto 40px auto;
+        max-width: 250px;
+    }
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    #testimonials .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* =================================================================== */
+    /* FIX DEFINITIVO: Layout Servizi su Mobile */
+    /* =================================================================== */
+    /*
+      Questa nuova regola assicura che il layout a griglia del desktop
+      venga completamente annullato sui dispositivi più piccoli.
+    */
+    .servizio-item,
+    .servizio-item.reverse {
+        display: flex;          /* Usa Flexbox per un controllo flessibile */
+        flex-direction: column; /* Impila gli elementi uno sopra l'altro */
+        gap: 40px;              /* Aggiunge spazio tra immagine e testo */
+        text-align: center;
+    }
+
+    /* Resetta esplicitamente le regole di riordino per la classe .reverse */
+    .servizio-item.reverse .servizio-icona-grande,
+    .servizio-item.reverse .servizio-descrizione {
+        grid-column: auto; /* Annulla il riordino della colonna */
+        grid-row: auto;    /* Annulla il riordino della riga */
+    }
+    /* =================================================================== */
+    /* FINE FIX */
+    /* =================================================================== */
+    
+    .servizio-descrizione ul {
+        text-align: left;
+        display: inline-block; /* Per centrare la lista */
+    }
+}
+
+
+/* ===================================================================
+   2. Fino a 768px (Tablet verticali e Mobile grandi)
+   =================================================================== */
+@media (max-width: 768px) {
+
+    /* ---- Tipografia e Spaziature Generali ---- */
+    :root {
+        --font-size-base: 15px;
+        --header-height: 70px;
+        --section-padding-y: 80px;
+        --container-padding: 20px;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.4rem; }
+
+    /* ---- Header e Navigazione Mobile ---- */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+    }
+    .menu-toggle .hamburger-icon {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: var(--color-white);
+        position: relative;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+    .menu-toggle .hamburger-icon::before,
+    .menu-toggle .hamburger-icon::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--color-white);
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+    .menu-toggle .hamburger-icon::before { top: -9px; }
+    .menu-toggle .hamburger-icon::after { bottom: -9px; }
+    .menu-toggle[aria-expanded="true"] .hamburger-icon { background-color: transparent; }
+    .menu-toggle[aria-expanded="true"] .hamburger-icon::before { top: 0; transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .hamburger-icon::after { bottom: 0; transform: rotate(-45deg); }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: #0E0E1A;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
+    }
+    header nav ul.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    header nav ul li { width: 100%; text-align: center; }
+    header nav ul li a {
+        display: block;
+        padding: 18px 20px;
+        font-size: 1.2rem;
+        width: 100%;
+    }
+    header nav ul li a:hover,
+    header nav ul li a.active {
+        background-color: var(--color-surface);
+        color: var(--color-primary);
+    }
+    header nav ul li a::after { display: none; }
+
+    /* ---- Hero Section ---- */
+    .hero-section { padding: 100px 0; }
+    .hero-section h1 { font-size: 2.8rem; }
+    .hero-section .subtitle { font-size: 1.1rem; }
+    .hero-section .btn {
+        display: block;
+        width: 90%;
+        max-width: 320px;
+        margin: 15px auto;
+    }
+
+    /* ---- Layout e Griglie ---- */
+    .servizi-preview-grid,
+    .gallery-grid,
+    .servizi-tipologie-grid,
+    #valori .valori-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .servizio-card:hover, .project-card:hover { transform: none; }
+    #valori .valori-grid { gap: 40px; }
+
+    /* ---- Footer ---- */
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .footer-col { margin-bottom: 30px; }
+    .footer-col:last-child { margin-bottom: 0; }
+    .footer-col .social-icons { justify-content: center; }
+
+    /* ---- Cookie Banner ---- */
+    #cookieConsentBanner { width: 90%; padding: 24px; }
+    #cookieConsentBanner .cookie-banner-actions { flex-direction: column; align-items: stretch; }
+}
+
+
+/* ===================================================================
+   3. Fino a 480px (Mobile piccoli)
+   =================================================================== */
+@media (max-width: 480px) {
+
+    /* ---- Tipografia e Spaziature Generali ---- */
+    :root {
+        --section-padding-y: 70px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .hero-section h1 { font-size: 2.4rem; }
+
+    /* ---- Componenti ---- */
+    .btn { padding: 15px 32px; font-size: 0.95rem; }
+    .servizio-card, .project-card { padding: 28px; }
+}
